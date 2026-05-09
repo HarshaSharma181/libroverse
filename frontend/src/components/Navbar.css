@@ -1,0 +1,379 @@
+/* src/components/Navbar.css */
+.navbar {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+/* Left: Brand Logo - Pushed all the way left */
+.nav-left {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto; /* Don't grow or shrink */
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+  transition: transform 0.3s ease;
+  margin-right: auto; /* Push to left */
+}
+
+.brand:hover {
+  transform: scale(1.05);
+}
+
+.brand-icon {
+  font-size: 32px;
+  margin-right: 12px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.brand-text {
+  background: linear-gradient(45deg, #ffffff, #f1c40f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Right: All Navigation Items - Pushed all the way right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Push everything to right */
+  gap: 40px;
+  flex: 1; /* Take remaining space */
+  margin-left: 40px; /* Add space between brand and nav items */
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background-color: rgba(241, 196, 15, 0.2);
+  color: #f1c40f;
+  font-weight: 700;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #f1c40f;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 70%;
+}
+
+/* Dashboard button in nav-links (for homepage) */
+.dashboard-nav-btn {
+  padding: 8px 18px;
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+}
+
+/* Auth Buttons / User Info */
+.nav-auth {
+  display: flex;
+  align-items: center;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.login-btn, .register-btn {
+  padding: 10px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-width: 90px;
+  white-space: nowrap;
+}
+
+.login-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.register-btn {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+  border: 2px solid #e74c3c;
+}
+
+.register-btn:hover {
+  background: linear-gradient(45deg, #c0392b, #e74c3c);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* User Section */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.username {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.dashboard-btn {
+  padding: 8px 18px;
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.dashboard-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+}
+
+.logout-btn {
+  padding: 8px 18px;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background: rgba(231, 76, 60, 0.2);
+  border-color: #e74c3c;
+  transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .nav-container {
+    padding: 0 25px;
+  }
+  
+  .nav-right {
+    gap: 30px;
+    margin-left: 30px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-container {
+    padding: 0 20px;
+  }
+  
+  .nav-right {
+    gap: 20px;
+    margin-left: 20px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .brand-text {
+    font-size: 24px;
+  }
+  
+  .login-btn, .register-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+    min-width: 80px;
+  }
+  
+  .dashboard-nav-btn,
+  .dashboard-btn,
+  .logout-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+  
+  .nav-left {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .nav-right {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    order: 2;
+  }
+  
+  .nav-auth {
+    width: 100%;
+    justify-content: center;
+    order: 3;
+  }
+  
+  .auth-buttons, .user-section {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+  
+  .brand-text {
+    font-size: 22px;
+  }
+  
+  .brand-icon {
+    font-size: 26px;
+    margin-right: 8px;
+  }
+  
+  .login-btn, .register-btn {
+    padding: 7px 14px;
+    font-size: 13px;
+    min-width: 70px;
+  }
+  
+  .dashboard-nav-btn,
+  .username, 
+  .dashboard-btn, 
+  .logout-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}

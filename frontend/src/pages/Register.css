@@ -1,0 +1,697 @@
+/* src/pages/Register.css - Complete Updated CSS */
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: 20px;
+}
+
+.register-wrapper {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  min-height: 700px;
+}
+
+/* Left Branding Section */
+.register-brand {
+  flex: 1;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 60px;
+  line-height: 1.6;
+}
+
+.benefits {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+
+.benefits h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-list li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.benefits-list i {
+  color: #93c5fd;
+}
+
+.illustration {
+  margin-top: 40px;
+}
+
+.book-stack {
+  position: relative;
+  height: 200px;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.book {
+  position: absolute;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.book-1 {
+  width: 160px;
+  height: 220px;
+  background: linear-gradient(45deg, #1d4ed8, #3b82f6);
+  transform: rotate(-5deg);
+  left: 0;
+  z-index: 1;
+}
+
+.book-2 {
+  width: 160px;
+  height: 220px;
+  background: linear-gradient(45deg, #2563eb, #60a5fa);
+  transform: rotate(0deg);
+  left: 20px;
+  z-index: 2;
+}
+
+.book-3 {
+  width: 160px;
+  height: 220px;
+  background: linear-gradient(45deg, #3b82f6, #93c5fd);
+  transform: rotate(5deg);
+  left: 40px;
+  z-index: 3;
+}
+
+/* Right Form Section */
+.register-form-container {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.form-header h2 {
+  font-size: 2.2rem;
+  color: #1e293b;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* Input Fields - All Form Inputs */
+.input-group {
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.label-container {
+  margin-bottom: 8px;
+}
+
+.label-container label {
+  display: block;
+  margin-bottom: 4px;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.label-help {
+  display: block;
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+.required {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+/* Password Row - Equal columns */
+.password-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 10px;
+  align-items: stretch;
+}
+
+.password-column {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.password-column .input-group {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 150px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 16px 16px 16px 48px;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  height: 52px;
+  background: #f8fafc;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #1e40af;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 42px;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.input-field:focus + .input-icon {
+  color: #1e40af;
+}
+
+/* Password Strength */
+.password-strength {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.strength-bar {
+  height: 6px;
+  border-radius: 3px;
+  transition: all 0.3s;
+  flex-grow: 1;
+  max-width: 100px;
+  background: #e2e8f0;
+}
+
+.strength-bar.weak {
+  background-color: #ef4444;
+}
+
+.strength-bar.medium {
+  background-color: #f59e0b;
+}
+
+.strength-bar.strong {
+  background-color: #10b981;
+}
+
+.strength-text {
+  font-size: 0.85rem;
+  color: #64748b;
+  min-width: 50px;
+  font-weight: 500;
+}
+
+/* Password Match Status */
+.password-match {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  min-height: 24px;
+}
+
+.password-match.error {
+  color: #ef4444;
+}
+
+.password-match.success {
+  color: #10b981;
+}
+
+/* Admin Checkbox Styles - ADDED THIS */
+.admin-checkbox-group {
+  margin: 30px 0 25px 0;
+  padding: 18px 20px;
+  background: #f0f9ff;
+  border-radius: 12px;
+  border: 2px solid #dbeafe;
+}
+
+.admin-checkbox-group .checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #1e40af;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-weight: 600;
+}
+
+.admin-checkbox-group .checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.admin-checkbox-group .checkmark {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 2px solid #93c5fd;
+  border-radius: 5px;
+  margin-right: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.3s;
+}
+
+.admin-checkbox-group .checkbox-label:hover .checkmark {
+  border-color: #1e40af;
+  background-color: #dbeafe;
+}
+
+.admin-checkbox-group .checkbox-label input:checked ~ .checkmark {
+  background-color: #1e40af;
+  border-color: #1e40af;
+}
+
+.admin-checkbox-group .checkbox-label input:checked ~ .checkmark:after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.admin-text {
+  color: #1e40af;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-text i {
+  font-size: 1.1rem;
+  color: #1e40af;
+}
+
+.admin-note {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin: 0.8rem 0 0 32px;
+  line-height: 1.5;
+  padding-left: 5px;
+}
+
+.admin-note i {
+  color: #3b82f6;
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+/* Terms & Conditions - Fixed Properly */
+.terms-group {
+  margin: 30px 0 25px 0;
+  padding: 18px 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 2px solid #cbd5e1;
+  border-radius: 5px;
+  margin-right: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.3s;
+}
+
+.checkbox-label:hover .checkmark {
+  border-color: #1e40af;
+  background-color: #f0f9ff;
+}
+
+.checkbox-label input:checked ~ .checkmark {
+  background-color: #1e40af;
+  border-color: #1e40af;
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.terms-text {
+  display: inline;
+  line-height: 1.6;
+}
+
+.terms-link {
+  color: #1e40af;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline;
+  margin: 0 3px;
+}
+
+.terms-link:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Messages */
+.error-message {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  border-left: 4px solid #dc2626;
+}
+
+.success-message {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 14px 16px;
+  border-radius: 10px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  border-left: 4px solid #10b981;
+}
+
+/* Register Button */
+.register-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0 25px 0;
+  letter-spacing: 0.5px;
+}
+
+.register-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(30, 64, 175, 0.2);
+}
+
+.register-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #64748b;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.divider span {
+  padding: 0 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Social Register */
+.social-register {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.social-btn {
+  padding: 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  background: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-btn:hover {
+  border-color: #1e40af;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.google-btn {
+  color: #334155;
+}
+
+.github-btn {
+  color: #334155;
+}
+
+/* Login Link */
+.login-link {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.95rem;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.login-link-text {
+  color: #1e40af;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.login-link-text:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .register-wrapper {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .register-brand {
+    padding: 40px 30px;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+  }
+
+  .password-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .password-column {
+    margin-bottom: 24px;
+  }
+
+  .password-column:last-child {
+    margin-bottom: 0;
+  }
+
+  .password-column .input-group {
+    min-height: auto;
+  }
+
+  .book-stack {
+    transform: scale(0.8);
+  }
+
+  .register-form-container {
+    padding: 40px 30px;
+  }
+
+  .register-card {
+    max-width: 100%;
+  }
+
+  .admin-checkbox-group {
+    margin: 20px 0;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-register {
+    grid-template-columns: 1fr;
+  }
+
+  .register-container {
+    padding: 10px;
+  }
+
+  .terms-group {
+    padding: 15px;
+  }
+
+  .checkbox-label {
+    font-size: 0.9rem;
+  }
+
+  .admin-checkbox-group {
+    padding: 12px;
+  }
+
+  .admin-note {
+    margin-left: 28px;
+    font-size: 0.8rem;
+  }
+}
